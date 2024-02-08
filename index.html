@@ -19,13 +19,15 @@
     </head>
     <body>
         <div id="root"></div>
-        <script>
-            // Найдите на странице корневой элемент и сохраните на него ссылку
-            const rootElement = document.getElementById('root');
-            // Вызовите метод ReactDOM.createRoot и передайте ему ссылку на корневой элемент
-            const root = ReactDOM.createRoot(rootElement);
-            // Вызовите метод render корня приложения и передайте в параметрах строку "Привет, Кекс!"
-            root.render('Привет, Кекс!');
+        <script type="text/babel">
+            const container = document.getElementById('root');
+            const root = ReactDOM.createRoot(container);
+            // Передаём методу root.render корневой компонент App
+            root.render(<App />);
+
+            function App() {
+                return <h1>Аренда яхты</h1>;
+            }
         </script>
     </body>
 </html>
