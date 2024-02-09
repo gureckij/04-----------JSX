@@ -27,43 +27,44 @@
             // Передаём методу root.render корневой компонент App
             root.render(<App cardData={cardData} />);
 
-            function App({ cardData }) {
+            function Card({ cardData }) {
+                /* Перенос кода для элемента списка из App, не забываем про переменные featureList и formattedPrice. */
                 const formattedPrice = `${cardData.price.toLocaleString()} ₽/час`;
                 const featuresList = cardData.features.map((feature) => (
                     <li className="feature">{feature}</li>
                 ));
 
                 return (
+                    <li className="card">
+                        <img
+                            className="card-img"
+                            src={cardData.img}
+                            width="280"
+                            height="140"
+                            alt="Белая двухпалубная яхта"
+                        />
+                        <div className="card-content">
+                            <h3 className="card-title">{cardData.name}</h3>
+                            <p className="card-description">
+                                {cardData.description}
+                            </p>
+                            <ul className="card-features">{featuresList}</ul>
+                        </div>
+                        <p className="card-price">
+                            <span className="card-price-name">Цена:</span>
+                            <span className="card-price-value">
+                                {formattedPrice}
+                            </span>
+                        </p>
+                    </li>
+                );
+            }
+
+            function App({ cardData }) {
+                return (
                     <section className="rent">
                         <ul className="cards">
-                            <li className="card">
-                                <img
-                                    className="card-img"
-                                    src={cardData.img}
-                                    width="280"
-                                    height="140"
-                                    alt="Белая двухпалубная яхта"
-                                />
-                                <div className="card-content">
-                                    <h3 className="card-title">
-                                        {cardData.name}
-                                    </h3>
-                                    <p className="card-description">
-                                        {cardData.description}
-                                    </p>
-                                    <ul className="card-features">
-                                        {featuresList}
-                                    </ul>
-                                </div>
-                                <p className="card-price">
-                                    <span className="card-price-name">
-                                        Цена:
-                                    </span>
-                                    <span className="card-price-value">
-                                        {formattedPrice}
-                                    </span>
-                                </p>
-                            </li>
+                            <Card cardData={cardData} />
                         </ul>
                     </section>
                 );
