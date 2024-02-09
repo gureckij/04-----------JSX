@@ -27,6 +27,7 @@
             root.render(<App />);
 
             function App() {
+                const name = 'Катер Meridian 401';
                 return (
                     <section className="rent">
                         <ul className="cards">
@@ -39,9 +40,7 @@
                                     alt="Белая двухпалубная яхта"
                                 />
                                 <div className="card-content">
-                                    <h3 className="card-title">
-                                        Катер Meridian 401
-                                    </h3>
+                                    <h3 className="card-title">{name}</h3>
                                     <p className="card-description">
                                         Яхта 401 длиной 12.5 метров и шириной
                                         4.2 метра
