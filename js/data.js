@@ -15,6 +15,24 @@ const cards = [
         price: 25000,
         features: ['6 кают', 'оборудованная кухня', 'джакузи'],
     },
+    {
+        id: '3',
+        name: 'Катер Starfisher 34',
+        description:
+            'Моторная яхта длиной 11 метров и вместимостью до 8 человек',
+        img: 'img/photo-card-3.jpg',
+        price: 18000,
+        features: ['4 каюты', '6 спальных мест', 'аудиосистема, кондиционер'],
+    },
+    {
+        id: '4',
+        name: 'Катер Atlantic 3000',
+        description:
+            'Катер Atlantic длиной 14 метров и вместимостью до 6 человек',
+        img: 'img/photo-card-4.jpg',
+        price: 15000,
+        features: ['2 каюты', '4 спальных места', 'оборудованная кухня'],
+    },
 ];
 
 window.cards = cards;

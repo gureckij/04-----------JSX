@@ -61,12 +61,12 @@
             }
 
             function App({ cards }) {
-                const [firstCardData, secondCardData] = cards;
                 return (
                     <section className="rent">
                         <ul className="cards">
-                            <Card cardData={firstCardData} />
-                            <Card cardData={secondCardData} />
+                            {cards.map((item) => (
+                                <Card cardData={item} key={item.id} />
+                            ))}
                         </ul>
                     </section>
                 );
