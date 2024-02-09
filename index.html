@@ -33,7 +33,7 @@
                 const img = 'img/photo-card-1.jpg';
 
                 const price = 14000;
-                const formattedPrice = `${price}`;
+                const formattedPrice = `${price.toLocaleString()} ₽/час`;
                 return (
                     <section className="rent">
                         <ul className="cards">
@@ -61,7 +61,7 @@
                                         Цена:
                                     </span>
                                     <span className="card-price-value">
-                                        {price}
+                                        {formattedPrice}
                                     </span>
                                 </p>
                             </li>
