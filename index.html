@@ -34,6 +34,17 @@
 
                 const price = 15000;
                 const formattedPrice = `${price.toLocaleString()} ₽/час`;
+
+                const features = [
+                    '2 каюты',
+                    '4 спальных места',
+                    'аудиосистема',
+                ];
+
+                const featuresList = features.map((feature) => (
+                    <li>{feature}</li>
+                ));
+
                 return (
                     <section className="rent">
                         <ul className="cards">
@@ -51,9 +62,7 @@
                                         {description}
                                     </p>
                                     <ul className="card-features">
-                                        <li>2 каюты</li>
-                                        <li>4 спальных места</li>
-                                        <li>аудиосистема, кондиционер</li>
+                                        {featuresList}
                                     </ul>
                                 </div>
                                 <p className="card-price">
