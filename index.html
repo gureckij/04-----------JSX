@@ -27,20 +27,26 @@
             // Передаём методу root.render корневой компонент App
             root.render(<App cards={cards} topSellers={topSellers} />);
 
-            function RentHeader() {
+            function RentHeader({ isShownByGrid }) {
+                // Добавьте компоненту параметр isShownByGrid для отображения режима
+                // Привяжите класс active на кнопках к значению этого параметра
                 return (
                     <header>
                         <h2>Аренда яхны</h2>
                         <ul class="card-view-buttons">
                             <li class="card-view-item">
                                 <button
-                                    class="card-view-button-grid active"
+                                    class={`card-view-button-grid ${
+                                        isShownByGrid ? 'active' : ''
+                                    }`}
                                     type="button"
                                 ></button>
                             </li>
                             <li class="card-view-item">
                                 <button
-                                    class="card-view-button-list"
+                                    class={`card-view-button-list ${
+                                        !isShownByGrid ? 'active' : ''
+                                    }`}
                                     type="button"
                                 ></button>
                             </li>
@@ -87,10 +93,10 @@
             }
 
             function App({ cards, topSellers }) {
-                const isShownByGrid = true;
+                const isShownByGrid = false;
                 return (
                     <section className="rent">
-                        <RentHeader />
+                        <RentHeader isShownByGrid={isShownByGrid} />
                         <ul className={`cards ${!isShownByGrid ? 'list' : ''}`}>
                             {cards.map((item, index) => (
                                 <Card

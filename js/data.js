@@ -38,3 +38,4 @@ const cards = [
 ];
 
 window.cards = cards;
+window.topSellers = topSellers;
