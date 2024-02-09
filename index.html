@@ -17,6 +17,7 @@
             src="https://unpkg.com/@babel/standalone/babel.min.js"
         ></script>
         <link rel="stylesheet" href="css/style.css" />
+        <script src="js/data.js"></script>
     </head>
     <body>
         <div id="root"></div>
@@ -24,24 +25,11 @@
             const container = document.getElementById('root');
             const root = ReactDOM.createRoot(container);
             // Передаём методу root.render корневой компонент App
-            root.render(<App />);
+            root.render(<App cardData={cardData} />);
 
-            function App() {
-                const name = 'Катер Meridian 401';
-                const description =
-                    'Яхта 401 длиной 12.5 метров и шириной 4.2 метра';
-                const img = 'img/photo-card-1.jpg';
-
-                const price = 15000;
-                const formattedPrice = `${price.toLocaleString()} ₽/час`;
-
-                const features = [
-                    '2 каюты',
-                    '4 спальных места',
-                    'аудиосистема',
-                ];
-
-                const featuresList = features.map((feature) => (
+            function App({ cardData }) {
+                const formattedPrice = `${cardData.price.toLocaleString()} ₽/час`;
+                const featuresList = cardData.features.map((feature) => (
                     <li>{feature}</li>
                 ));
 
@@ -51,15 +39,17 @@
                             <li className="card">
                                 <img
                                     className="card-img"
-                                    src={img}
+                                    src={cardData.img}
                                     width="280"
                                     height="140"
                                     alt="Белая двухпалубная яхта"
                                 />
                                 <div className="card-content">
-                                    <h3 className="card-title">{name}</h3>
+                                    <h3 className="card-title">
+                                        {cardData.name}
+                                    </h3>
                                     <p className="card-description">
-                                        {description}
+                                        {cardData.description}
                                     </p>
                                     <ul className="card-features">
                                         {featuresList}
