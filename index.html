@@ -30,7 +30,7 @@
             function App({ cardData }) {
                 const formattedPrice = `${cardData.price.toLocaleString()} ₽/час`;
                 const featuresList = cardData.features.map((feature) => (
-                    <li>{feature}</li>
+                    <li className="feature">{feature}</li>
                 ));
 
                 return (
