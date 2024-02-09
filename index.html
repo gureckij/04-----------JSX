@@ -25,7 +25,7 @@
             const container = document.getElementById('root');
             const root = ReactDOM.createRoot(container);
             // Передаём методу root.render корневой компонент App
-            root.render(<App cards={cards} />);
+            root.render(<App cards={cards} topSellers={topSellers} />);
 
             function Card({ cardData, isTopSeller }) {
                 /* Перенос кода для элемента списка из App, не забываем про переменные featureList и formattedPrice. */
@@ -64,13 +64,13 @@
                 );
             }
 
-            function App({ cards }) {
+            function App({ cards, topSellers }) {
                 return (
                     <section className="rent">
                         <ul className="cards">
                             {cards.map((item, index) => (
                                 <Card
-                                    isTopSeller={index === 0}
+                                    isTopSeller={topSellers.includes(item.id)}
                                     cardData={item}
                                     key={item.id}
                                 />
