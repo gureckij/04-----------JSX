@@ -1,4 +1,4 @@
-const topSellers = ['1', '3'];
+const topSellers = ['2', '3'];
 
 const cards = [
     {
