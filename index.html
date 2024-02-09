@@ -25,7 +25,7 @@
             const container = document.getElementById('root');
             const root = ReactDOM.createRoot(container);
             // Передаём методу root.render корневой компонент App
-            root.render(<App cardData={cardData} />);
+            root.render(<App cards={cards} />);
 
             function Card({ cardData }) {
                 /* Перенос кода для элемента списка из App, не забываем про переменные featureList и formattedPrice. */
@@ -60,13 +60,13 @@
                 );
             }
 
-            function App({ cardData }) {
+            function App({ cards }) {
+                const [firstCardData, secondCardData] = cards;
                 return (
                     <section className="rent">
                         <ul className="cards">
-                            <Card cardData={cardData} />
-                            <Card cardData={cardData} />
-                            <Card cardData={cardData} />
+                            <Card cardData={firstCardData} />
+                            <Card cardData={secondCardData} />
                         </ul>
                     </section>
                 );
