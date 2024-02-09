@@ -35,7 +35,11 @@
                 ));
 
                 return (
-                    <li className="card">
+                    <li
+                        className={`card ${
+                            isTopSeller ? 'card-top-seller' : ''
+                        }`}
+                    >
                         <img
                             className="card-img"
                             src={cardData.img}
