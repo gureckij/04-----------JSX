@@ -27,7 +27,7 @@
             // Передаём методу root.render корневой компонент App
             root.render(<App cards={cards} />);
 
-            function Card({ cardData }) {
+            function Card({ cardData, isTopSeller }) {
                 /* Перенос кода для элемента списка из App, не забываем про переменные featureList и formattedPrice. */
                 const formattedPrice = `${cardData.price.toLocaleString()} ₽/час`;
                 const featuresList = cardData.features.map((feature) => (
@@ -65,7 +65,11 @@
                     <section className="rent">
                         <ul className="cards">
                             {cards.map((item, index) => (
-                                <Card cardData={item} key={item.id} />
+                                <Card
+                                    isTopSeller={index === 1}
+                                    cardData={item}
+                                    key={item.id}
+                                />
                             ))}
                         </ul>
                     </section>
