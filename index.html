@@ -16,6 +16,7 @@
             crossorigin
             src="https://unpkg.com/@babel/standalone/babel.min.js"
         ></script>
+        <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
         <div id="root"></div>
@@ -26,7 +27,43 @@
             root.render(<App />);
 
             function App() {
-                return <h1>Аренда яхты</h1>;
+                return (
+                    <section className="rent">
+                        <ul className="cards">
+                            <li className="card">
+                                <img
+                                    className="card-img"
+                                    src=""
+                                    width="280"
+                                    height="140"
+                                    alt="Белая двухпалубная яхта"
+                                />
+                                <div className="card-content">
+                                    <h3 className="card-title">
+                                        Катер Meridian 401
+                                    </h3>
+                                    <p className="card-description">
+                                        Яхта 401 длиной 12.5 метров и шириной
+                                        4.2 метра
+                                    </p>
+                                    <ul className="card-features">
+                                        <li>2 каюты</li>
+                                        <li>4 спальных места</li>
+                                        <li>аудиосистема, кондиционер</li>
+                                    </ul>
+                                </div>
+                                <p className="card-price">
+                                    <span className="card-price-name">
+                                        Цена:
+                                    </span>
+                                    <span className="card-price-value">
+                                        14 000 ₽/час
+                                    </span>
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
+                );
             }
         </script>
     </body>
