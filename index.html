@@ -64,7 +64,7 @@
                 return (
                     <section className="rent">
                         <ul className="cards">
-                            {cards.map((item) => (
+                            {cards.map((item, index) => (
                                 <Card cardData={item} key={item.id} />
                             ))}
                         </ul>
